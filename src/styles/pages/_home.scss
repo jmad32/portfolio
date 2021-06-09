@@ -1,0 +1,421 @@
+.heading-section {
+  padding: 50px 0;
+
+  .profile-img {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px 5px rgba(201,201,201,1);
+    overflow: hidden;
+    
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .profile-name {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 35px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .profile-position {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .profile-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto 0;
+    width: 100%;
+    max-width: 500px;
+
+    div {
+      display: block;
+      width: 45%;
+    }
+
+    div a {
+      display: block;
+      padding: 15px;
+      width: 100%;
+      font-size: 18px;
+      text-align: center;
+      color: $text-color;
+      border: 1px solid $orange-web;
+      border-radius: 30px;
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      svg {
+        display: inline-block;
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        fill: $text-color;
+        vertical-align: middle;
+      }
+
+      @include on-event {
+        text-decoration: none;
+        color: $orange-web;
+        background-color: $text-color;
+        border: 1px solid $text-color;
+
+        svg {
+          fill: $orange-web;
+        }
+      }
+    }
+  }
+}
+
+.border-section {
+  padding-bottom: 50px;
+
+  .border-holder {
+    display: block;
+    margin: auto;
+    width: 100%;
+    border: solid 1px #F08700;
+    border-radius: 5px;
+  }
+}
+
+.skill-section {
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 50px;
+
+    .cols {
+      display: block;
+    
+      &:first-child {
+        width: 30%;
+      }
+
+      &:last-child {
+        width: 60%;
+      }
+    }
+
+    .item:not(:first-child) {
+      margin-top: 50px;
+    }
+
+    .label {
+      position: relative;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 25px;
+      text-transform: uppercase;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 50px;
+        height: 3px;
+        background-color: $brand-color;
+      }
+    }
+
+    .description {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .skill-list {
+      margin-bottom: 15px;
+      padding-left: 20px;
+
+      li {
+        font-size: 16px;
+
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .app-holder {
+      .app {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+      }
+
+      .text {
+        position: relative;
+        display: block;
+        padding-left: 30px;
+        width: 50%;
+        
+        p {
+          margin: 0;
+          font-weight: 500;
+          font-size: 16px;
+        }
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      .bar-holder {
+        display: block;
+        width: 50%;
+
+        .photoshop {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 10px;
+          background-color: $text-color;
+          border-radius: 10px;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 10px;
+            background-color: $orange-web;
+            border-radius: 10px;
+          }
+        }
+
+        .autodesk {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 10px;
+          background-color: $text-color;
+          border-radius: 10px;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 10px;
+            background-color: $orange-web;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+
+    .schools-holder {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .level {
+        width: 30%;
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .school {
+        width: 70%;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@include respond-to(md-down) {
+  .heading-section {
+    .profile-img {
+      width: 30%;
+    }
+
+    .profile-name {
+      margin-top: 25px;
+      font-size: 30px;
+    }
+
+    .profile-position {
+      margin-top: 5px;
+      font-size: 18px;
+    }
+
+    .profile-contact {
+      margin: 25px auto 0;
+      max-width: 400px;
+
+      div {
+        a {
+          padding: 10px;
+          font-size: 16px;
+  
+          svg {
+            margin-right: 3px;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .skill-section {
+    .wrapper {
+      .cols:first-child {
+        width: 100%;
+        order: 2;
+      }
+
+      .cols:last-child {
+        margin-bottom: 50px;
+        width: 100%;
+        order: 1;
+      }
+
+      .label {
+        font-size: 22px;
+      }
+
+      .app-holder {
+        .app {
+          &:not(:first-child) {
+            margin-top: 15px;
+          }
+        }
+
+        .text {
+          margin-bottom: 10px;
+          width: 100%;
+        }
+
+        .bar-holder {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(xs) {
+  .heading-section {
+    padding: 50px 0 40px;
+
+    .profile-img {
+      width: 40%;
+      max-width: 150px;
+    }
+
+    .profile-name {
+      font-size: 25px;
+    }
+
+    .profile-position {
+      font-size: 15px;
+    }
+
+    .profile-contact {
+      max-width: 250px;
+
+      div {
+        width: 48%;
+
+        a {
+          padding: 5px 10px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .border-section {
+    padding-bottom: 40px;
+  }
+
+  .skill-section {
+    .wrapper {
+      .cols {
+        &:last-child {
+          margin-bottom: 40px;
+        }
+      }
+
+      .item {
+        &:not(:first-child) {
+          margin-top: 40px;
+        }
+      }
+
+      .label {
+        font-size: 20px;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+
+      .schools-holder {
+        .school {
+          font-size: 14px;
+        }
+      }
+
+      .skill-list {
+        li {
+          font-size: 15px;
+        }
+      }
+
+      .app-holder {
+        .text {
+          p {
+            font-size: 15px;
+          }
+        }
+
+        .bar-holder {
+          .photoshop,
+          .autodesk {
+            height: 8px;
+
+            &::after {
+              height: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
