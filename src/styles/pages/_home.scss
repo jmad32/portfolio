@@ -257,6 +257,144 @@
   }
 }
 
+.portfolio-section {
+  .heading-title {
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: $orange-web;
+    }
+  }
+
+  .nav-tabs {
+    border-bottom: 1px solid $orange-web;
+
+    .nav-link {
+      text-transform: uppercase;
+      color: $text-color;
+
+      &:hover {
+        color: $orange-web;
+        background-color: $text-color;
+        border-color: $text-color;
+      }
+
+      &.active {
+        color: $orange-web;
+        background-color: $text-color;
+        border-color: $text-color;
+      }
+    }
+  }
+
+  .tab-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .tab-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &.info,
+      &.poster {
+        justify-content: space-evenly;
+      }
+    }
+
+    .tab-image {
+      position: relative;
+      display: block;
+      padding-top: 30%;
+      width: 21%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      box-shadow: 0px 0px 5px 0px rgba(173,173,173,1);
+      transition: all .2s ease-in-out;
+
+      &:not(:nth-child(-n+4)) {
+        margin-top: 50px;
+      }
+
+      img {
+        display: none;
+        width: 100%;
+      }
+    }
+
+    .tab-info {
+      position: relative;
+      display: block;
+      padding-top: 30%;
+      width: 41%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      box-shadow: 0px 0px 5px 0px rgba(173,173,173,1);
+      transition: all .2s ease-in-out;
+
+      &:not(:nth-child(-n+2)) {
+        margin-top: 50px;
+      }
+
+      img {
+        display: none;
+        width: 100%;
+      }
+    }
+
+    .tab-poster {
+      position: relative;
+      display: block;
+      padding-top: 48%;
+      width: 41%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      box-shadow: 0px 0px 5px 0px rgba(173,173,173,1);
+      transition: all .2s ease-in-out;
+
+      &:not(:nth-child(-n+2)) {
+        margin-top: 50px;
+      }
+
+      img {
+        display: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@include respond-to(md-up) {
+  .portfolio-section {
+    .tab-content {
+      .tab-image,
+      .tab-info {
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
 @include respond-to(md-down) {
   .heading-section {
     .profile-img {
@@ -323,6 +461,66 @@
 
         .bar-holder {
           width: 100%;
+        }
+      }
+    }
+  }
+
+  .portfolio-section {
+    .tab-content {
+      .tab-wrapper {
+        &.info,
+        &.poster {
+          justify-content: center;
+        }
+      }
+
+      .tab-info,
+      .tab-poster {
+        padding-top: initial;
+        width: 90%;
+        // max-width: 276px;
+        background-image: initial !important;
+        background-repeat: initial;
+        background-size: initial;
+        background-position: initial;
+        overflow: hidden;
+
+        &:not(:nth-child(-n+4)) {
+          margin-top: initial;
+        }
+
+        &:not(:nth-child(-n+2)) {
+          margin-top: initial;
+        }
+
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+
+        img {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to(sm-down) {
+  .portfolio-section {
+    .tab-content {
+      margin-top: 30px;
+
+      .tab-image {
+        padding-top: 62%;
+        width: 45%;
+
+        &:not(:nth-child(-n+4)) {
+          margin-top: initial;
+        }
+
+        &:not(:nth-child(-n+2)) {
+          margin-top: 30px;
         }
       }
     }
@@ -414,6 +612,54 @@
               height: 8px;
             }
           }
+        }
+      }
+    }
+  }
+
+  .portfolio-section {
+    .heading-title {
+      font-size: 30px;
+    }
+
+    .nav-tabs {
+      .nav-link {
+        padding: 5px 15px;
+        font-size: 14px;
+      }
+    }
+
+    .tab-content {
+      margin-top: 30px;
+
+      .tab-wrapper {
+        justify-content: center;
+      }
+
+      .tab-image {
+        padding-top: initial;
+        width: 90%;
+        max-width: 276px;
+        background-image: initial !important;
+        background-repeat: initial;
+        background-size: initial;
+        background-position: initial;
+        overflow: hidden;
+
+        &:not(:nth-child(-n+4)) {
+          margin-top: initial;
+        }
+
+        &:not(:nth-child(-n+2)) {
+          margin-top: initial;
+        }
+
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+
+        img {
+          display: block;
         }
       }
     }
